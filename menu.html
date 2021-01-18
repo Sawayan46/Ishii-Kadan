@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。 伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+  <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
+  <title>お料理 | 温海温泉旅館【公式サイト】</title>
+
+  <!-- JQuery読み込み -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- AOS.js -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!--flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- original -->
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js"></script>
+
+</head>
+
+<body class="menu">
+
+  <section id="modalArea" class="modalArea">
+    <div class="modalBg" id="modalBg"></div>
+    <dl class="reserve-list">
+      <div id="modalClose" class="modalClose"><img src="./src/img/close@2x.png" alt=""></div>
+      <h1>宿泊予約</h1>
+      <dt>お名前</dt>
+      <dd class="contact-item-input">
+        <input type="text" name="" placeholder="例：石井正悟" required>
+      </dd>
+      <dt>メールアドレス</dt>
+      <dd class="contact-item-input">
+        <input type="email" name="" placeholder="例：Example@example.com" required>
+      </dd>
+      <dt>ご希望プラン（空いているプランのみ表示されます）</dt>
+      <dd>
+        <select name="" id="">
+          <option value="" disabled selected>プランを選択してください</option>
+          <option value="">①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
+          <option value="">②平日に優雅に楽しむ、特別宿泊プラン</option>
+          <option value="">③絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+        </select>
+      </dd>
+      <dt>日時選択</dt>
+      <dd>
+        <input type="text" id="reserve-calender" placeholder="日時を選択してください">
+      </dd>
+      <div class="reserve-submit">
+        <button type="submit">送信する</button>
+      </div>
+    </dl>
+  </section>
+  <!-- reserve-modal -->
+
+  <header class="header scroll-nav">
+    <div class="container">
+      <div class="site">
+        <a href="index.html"><img src="./src/img/sub-header-logo.png" alt=""></a>
+        <nav class="header-nav nav">
+          <ul>
+            <li>
+              <a href="room.html">お部屋</a>
+            </li>
+            <li>
+              <a href="menu.html">お料理</a>
+            </li>
+            <li>
+              <a href="onsen.html">温泉</a>
+            </li>
+            <li>
+              <div id="modalOpen" class="reserve is-sp">
+                <img src="./src/img/calender.png" alt="">
+                <p>宿泊予約</p>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div id="modalOpen" class="reserve is-pc">
+        <img src="./src/img/calender.png" alt="">
+        <p>宿泊予約</p>
+      </div>
+
+      <button type="button" class="nav-button" onClick="navFunc()">
+        <span class="sr-only">MENU</span>
+      </button>
+    </div>
+  </header>
+  <!-- /.header -->
+
+  <main>
+
+    <section class="heading">
+      <h1>お料理</h1>
+    </section>
+    <!-- /.heading -->
+
+    <section class="intro">
+      <ul class="breadcrumb">
+        <li>
+          <a href="index.html">トップ</a>
+        </li>
+        <li>お料理</li>
+      </ul>
+
+      <h2 class="intro-msg">地元熱海の市場で仕入れた食材のみを使った食材をふんだんに使い、<br>大将の技が光る「熱海料理」<br>四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。
+      </h2>
+
+      <article class="intro-odd intro-item intro-mt" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <div class="intro-picture"><img src="./src/img/menu01.png" alt=""></div>
+        <div class="intro-bg">
+          <div class="intro-text">
+            <h3>地元食材にこだわった会席料理</h3>
+            <p>みずみずしくほのかに甘い野菜、新鮮で味に深みがある魚介類、肉類。<br>旬の素材をそのままに生かす、経験に裏打ちされた確かな技。<br>四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="intro-even intro-item intro-mt" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <div class="intro-picture"><img src="./src/img/menu02.png" alt=""></div>
+        <div class="intro-bg">
+          <div class="intro-text">
+            <h3>熱海の漁港で目利きの品を</h3>
+            <p>石井花壇でお出しする料理はすべて料理長である大将の目利きで、<br>熱海の魚市場でその日のうちに仕入れたものを使用しております。<br>日本海の宝玉を十分にお楽しみください。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="intro-odd intro-item intro-mt" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <div class="intro-picture"><img src="./src/img/menu03.png" alt=""></div>
+        <div class="intro-bg">
+          <div class="intro-text">
+            <h3>食材が一流、職人も一流</h3>
+            <p>石井花壇の料理人は料亭で20年経験を積んだものばかり。<br>その時の最も旬な食材を、最高の調理でお届けします。<br>また、お料理への細かいご要望にもお答えできますので、<br>お気軽にお申し付けください。
+            </p>
+          </div>
+        </div>
+      </article>
+
+
+
+
+    </section>
+    <!-- /.intro -->
+
+  </main>
+  <!-- /. main -->
+
+  <footer class="footer">
+
+    <div class="footer-nav-center">
+      <ul class="footer-nav">
+        <li>
+          <a href="room.html">お部屋</a>
+        </li>
+        <li>
+          <a href="menu.html">お料理</a>
+        </li>
+        <li>
+          <a href="onsen.html">温泉</a>
+        </li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="footer-logo"><img src="./src/img/footer-logo.png" alt=""></a>
+    <ul class="footer-address">
+      <li>〒000-0000</li>
+      <li>山形県鶴岡市 x x x x x x x x x x x</li>
+      <li>TEL.000-0000-0000</li>
+      <li>FAX.00-0000-0000</li>
+    </ul>
+    <small>Copyright © 石井花壇 All Rights Reserved.</small>
+  </footer>
+  <!-- /.footer -->
+
+
+  <!--flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+
+  <!-- AOS.js -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <script>
+    flatpickr.localize(flatpickr.l10ns.ja);
+    flatpickr('#reserve-calender', {
+      minDate: "today",
+      mode: "range"
+    });
+  </script>
+
+</body>
+
+</html>
